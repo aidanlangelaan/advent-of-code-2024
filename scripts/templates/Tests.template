@@ -1,37 +1,39 @@
 using AdventOfCode.Challenges;
+using NUnit.Framework;
 
 namespace AdventOfCode.Tests;
 
-public class Day{{day_number}}Tests
+[TestFixture]
+public class Day{{day_number}}Test
 {
     private Day{{day_number}} _day{{day_number}};
-    
+
+    private readonly string[] input =
+    [
+        "testvalue"
+    ];
+
     [SetUp]
     public void Setup()
     {
-        var testInput = new[]
-        {
-            "put test values here",
-        };
-        
-        _day{{day_number}} = new Day{{day_number}}(testInput);
+        _day{{day_number}} = new Day{{day_number}}();
     }
-
+    
     [Test]
     public void Example_Part1_ShouldReturn123()
     {
         // act
-        var result = _day{{day_number}}.SolvePart1();
-
+        var result = _day{{day_number}}.PartOne(input);
+    
         // assert
         Assert.That(result, Is.EqualTo(123));
     }
-    
+
     [Test]
     public void Example_Part2_ShouldReturn123()
     {
         // act
-        var result = _day{{day_number}}.SolvePart2();
+        var result = _day{{day_number}}.PartTwo(input);
 
         // assert
         Assert.That(result, Is.EqualTo(123));

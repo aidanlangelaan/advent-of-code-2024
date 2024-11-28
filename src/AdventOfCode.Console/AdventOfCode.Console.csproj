@@ -2,91 +2,16 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-      <EmbeddedResource Include="Challenges\Day01\Input.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day02\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-    
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day03\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day04\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day05\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day06\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day07\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day08\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day09\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day10\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day11\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day12\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day13\Input.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Challenges\" />
+    </ItemGroup>
 </Project>

@@ -1,25 +1,17 @@
-using System.ComponentModel;
-using AdventOfCode.Core;
+using AdventOfCode.Core.Classes;
 
 namespace AdventOfCode.Challenges;
 
-[Description("Day {{day_number}}")]
-public class Day{{day_number}} : Challenge<Day{{day_number}}>
+public class Day{{day_number}} : SolutionBase
 {
-    public Day{{day_number}}(string[] input) : base(input)
-    {
-    }
+    public override int Day => {{day_number}};
 
-    public Day{{day_number}}() : base()
-    {
-    }
-    
-    public override int SolvePart1()
+    public override object PartOne(string[] input)
     {
         throw new NotImplementedException();
     }
 
-    public override int SolvePart2()
+    public override object PartTwo(string[] input)
     {
         throw new NotImplementedException();
     }
