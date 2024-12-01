@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
 using AdventOfCode.Core;
+using AdventOfCode.Core.Attributes;
 using AdventOfCode.Core.Classes;
 
 namespace AdventOfCode;
@@ -49,9 +50,17 @@ public abstract class Program
     {
         foreach (var solution in solutions)
         {
+            var solutionType = solution.GetType();
+            if (solutionType.GetCustomAttribute<ExcludeDayFromRunAttribute>() != null)
+            {
+                Console.WriteLine($"Day {solution.Day}: Skipped.");
+                continue;
+            }
+
             ExecuteSolutionWithMetrics(solution);
         }
     }
+
 
     private static void RunSingleSolution(IEnumerable<ISolution> solutions, string input)
     {
@@ -85,25 +94,40 @@ public abstract class Program
     
     private static void ExecuteSolutionWithMetrics(ISolution solution, int part = 0)
     {
+        var solutionType = solution.GetType();
         var (inputPart1, inputPart2) = ((SolutionBase)solution).GetInputs();
         Console.WriteLine($"Day {solution.Day}:");
 
-        var stopwatch = Stopwatch.StartNew();
-
         if (part is 0 or 1)
         {
-            stopwatch.Restart();
-            var partOneResult = solution.PartOne(inputPart1);
-            stopwatch.Stop();
-            Console.WriteLine($"  Part One: {partOneResult} (Execution Time: {stopwatch.ElapsedMilliseconds} ms)");
+            var partOneMethod = solutionType.GetMethod(nameof(solution.PartOne));
+            if (partOneMethod?.GetCustomAttribute<ExcludePartFromRunAttribute>()?.Part == 1)
+            {
+                Console.WriteLine("  Part One: Skipped.");
+            }
+            else
+            {
+                var stopwatch = Stopwatch.StartNew();
+                var partOneResult = solution.PartOne(inputPart1);
+                stopwatch.Stop();
+                Console.WriteLine($"  Part One: {partOneResult} (Execution Time: {stopwatch.ElapsedMilliseconds} ms)");
+            }
         }
 
         if (part is 0 or 2)
         {
-            stopwatch.Restart();
-            var partTwoResult = solution.PartTwo(inputPart2 ?? inputPart1);
-            stopwatch.Stop();
-            Console.WriteLine($"  Part Two: {partTwoResult} (Execution Time: {stopwatch.ElapsedMilliseconds} ms)");
+            var partTwoMethod = solutionType.GetMethod(nameof(solution.PartTwo));
+            if (partTwoMethod?.GetCustomAttribute<ExcludePartFromRunAttribute>()?.Part == 2)
+            {
+                Console.WriteLine("  Part Two: Skipped.");
+            }
+            else
+            {
+                var stopwatch = Stopwatch.StartNew();
+                var partTwoResult = solution.PartTwo(inputPart2 ?? inputPart1);
+                stopwatch.Stop();
+                Console.WriteLine($"  Part Two: {partTwoResult} (Execution Time: {stopwatch.ElapsedMilliseconds} ms)");
+            }
         }
     }
 }

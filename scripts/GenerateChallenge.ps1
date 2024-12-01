@@ -1,9 +1,9 @@
 function Get-NextDayNumber {
     $lastDayNumber = (Get-ChildItem -Path "..\src\AdventOfCode.Console\Challenges" -Directory |
-                      Select-Object -ExpandProperty Name |
-                      ForEach-Object { [int]($_ -replace '\D', '') } |
-                      Sort-Object |
-                      Select-Object -Last 1)
+            Select-Object -ExpandProperty Name |
+            ForEach-Object { [int]($_ -replace '\D', '') } |
+            Sort-Object |
+            Select-Object -Last 1)
     return "{0:D2}" -f ($lastDayNumber + 1)
 }
 
@@ -54,6 +54,9 @@ Write-Output "Generated code file: Day$DayNumber.cs`r`n"
 New-File -Path "$ChallengeDirectory\Input1.txt"
 New-File -Path "$ChallengeDirectory\Input2.txt"
 Write-Output "Generated input files: Input1.txt, Input2.txt`r`n"
+
+New-File -Path "$ChallengeDirectory\.solution"
+Write-Output "Generated solution file: .solution`r`n"
 
 New-File -Path "$ChallengeDirectory\Instruction.md"
 Write-Output "Generated instruction file: Instruction.md`r`n"
