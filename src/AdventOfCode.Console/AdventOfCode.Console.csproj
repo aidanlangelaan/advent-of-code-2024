@@ -14,4 +14,14 @@
     <ItemGroup>
       <Folder Include="Challenges\" />
     </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="Challenges\Day01\Input1.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="Challenges\Day01\Input2.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </EmbeddedResource>
+    </ItemGroup>
 </Project>
