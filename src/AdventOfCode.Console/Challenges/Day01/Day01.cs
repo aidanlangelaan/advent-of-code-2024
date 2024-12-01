@@ -10,25 +10,21 @@ public class Day01 : SolutionBase
     {
         var (listA, listB) = ParseLists(input);
 
-        var diffs = new List<int>();
-        while (listA.Count > 0)
-        {
-            var a = listA.Min();
-            var b = listB.Min();
+        listA.Sort();
+        listB.Sort();
 
-            diffs.Add(Math.Abs(a - b));
-
-            listA.Remove(a);
-            listB.Remove(b);
-        }
-
-        return diffs.Sum();
+        return listA.Zip(listB, (a, b) => Math.Abs(a - b)).Sum();
     }
 
     public override object PartTwo(string[] input)
     {
         var (listA, listB) = ParseLists(input);
-        return listA.Sum(num => num * listB.Count(x => x == num));
+
+        // Predetermine the counts of each number in listB
+        var counts = listB.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
+
+        // Use the predetermined counts rather than counting each time
+        return listA.Sum(num => num * counts.GetValueOrDefault(num, 0));
     }
 
     private static (List<int> listA, List<int> listB) ParseLists(string[] input)
