@@ -52,14 +52,10 @@ New-File -Path "$ChallengeDirectory\Day$DayNumber.cs" -Content $challengeCode
 Write-Output "Generated code file: Day$DayNumber.cs`r`n"
 
 New-File -Path "$ChallengeDirectory\Input1.txt"
-New-File -Path "$ChallengeDirectory\Input2.txt"
-Write-Output "Generated input files: Input1.txt, Input2.txt`r`n"
+Write-Output "Generated input files: Input1.txt`r`n"
 
 New-File -Path "$ChallengeDirectory\.solution"
 Write-Output "Generated solution file: .solution`r`n"
-
-New-File -Path "$ChallengeDirectory\Instruction.md"
-Write-Output "Generated instruction file: Instruction.md`r`n"
 
 $testCode = (Get-Content -Path "templates/Tests.template" -Raw) -replace "{{day_number}}", $DayNumber
 New-File -Path "$TestDirectory\Day${DayNumber}Tests.cs" -Content $testCode
@@ -67,7 +63,6 @@ Write-Output "Generated test file: Day${DayNumber}Tests.cs`r`n"
 
 $ProjectPath = "..\src\AdventOfCode.Console\AdventOfCode.Console.csproj"
 Add-EmbeddedResource -ProjectPath $ProjectPath -RelativePath "Challenges\Day$DayNumber\Input1.txt"
-Add-EmbeddedResource -ProjectPath $ProjectPath -RelativePath "Challenges\Day$DayNumber\Input2.txt"
 
 Write-Output "Added new Day$DayNumber to the project file`r`n"
 Write-Output "--- Completed generation for day $DayNumber ---`r`n"

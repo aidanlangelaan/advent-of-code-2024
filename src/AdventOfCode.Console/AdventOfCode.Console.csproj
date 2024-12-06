@@ -20,17 +20,7 @@
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day01\Input2.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
         <EmbeddedResource Include="Challenges\Day02\Input1.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day02\Input2.txt">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </EmbeddedResource>
     </ItemGroup>
@@ -40,27 +30,12 @@
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day03\Input2.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
         <EmbeddedResource Include="Challenges\Day04\Input1.txt">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day04\Input2.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
         <EmbeddedResource Include="Challenges\Day05\Input1.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
-        <EmbeddedResource Include="Challenges\Day05\Input2.txt">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </EmbeddedResource>
     </ItemGroup>
