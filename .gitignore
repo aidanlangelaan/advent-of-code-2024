@@ -353,4 +353,8 @@ MigrationBackup/
 
 # Local configuration
 appsettings.local.json
+
+# Challenge files
 .solution
+Input*.txt
+
