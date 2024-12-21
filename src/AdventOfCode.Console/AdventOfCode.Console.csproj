@@ -69,4 +69,9 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
 </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="Challenges\Day12\Input1.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </EmbeddedResource>
+    </ItemGroup>
 </Project>
